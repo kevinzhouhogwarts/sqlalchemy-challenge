@@ -50,11 +50,11 @@ def home():
     
     # List all possible routes
     return(
-        "/api/v1.0/precipitation<br/>"
-        "/api/v1.0/stations<br/>"
-        "/api/v1.0/tobs<br/>"
-        "/api/v1.0/<start><br/>"
-        "/api/v1.0/<start>/<end><br/>"
+        "/api/v1.0/precipitation - Retrieve percipitation data for the most recent year<br/>"
+        "/api/v1.0/stations - Retrieve all stations<br/>"
+        "/api/v1.0/tobs - Retrieve temperature observations at the most-active station, for the most recent year<br/>"
+        "/api/v1.0/&lt;start&gt; - View temperature statistics from a start date (YYYY-MM-DD)<br/>"
+        "/api/v1.0/&lt;start&gt;/&lt;end&gt; - View temperature statistics for period between a start date to an end date (YYYY-MM-DD)<br/>"
     )
 
 @app.route("/api/v1.0/precipitation")
@@ -193,4 +193,4 @@ def date_range(start, end):
         return jsonify({"error": f"Date input not recognized"}), 404
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
